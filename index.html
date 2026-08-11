@@ -27,7 +27,16 @@
   "name": "童話考察ブログ みだんの灯り",
   "url": "https://midan-tale.github.io/",
   "description": "童話・童謡を育児と人生観の視点で読みなおす考察ブログ",
-  "author": { "@type": "Person", "name": "みだん" },
+  "author": {
+    "@type": "Person",
+    "name": "みだん",
+    "sameAs": [
+      "https://note.com/midamidamidan",
+      "https://substack.com/@midan",
+      "https://x.com/komi_husband",
+      "https://mypage.syosetu.com/3111564/"
+    ]
+  },
   "inLanguage": "ja",
   "blogPost": [
     {
@@ -75,6 +84,15 @@
   .card a { color: inherit; text-decoration: none; }
   .about { max-width: 680px; margin: 3rem auto 0; padding: 1.8rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; opacity: 0.75; }
   .about strong { color: var(--candle); }
+  .links { max-width: 680px; margin: 2rem auto 0; padding: 0 1.8rem; }
+  .links h3 { font-family: 'Shippori Mincho', serif; color: var(--candle); font-size: 0.95rem; margin-bottom: 1rem; text-align: center; }
+  .link-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; }
+  .link-row a {
+    display: inline-block; font-size: 0.82rem; color: var(--fog);
+    border: 1px solid rgba(232,163,61,0.35); border-radius: 100px;
+    padding: 0.5rem 1.2rem; text-decoration: none; transition: all 0.15s ease;
+  }
+  .link-row a:hover { background: rgba(232,163,61,0.12); border-color: var(--candle); color: var(--paper); }
   footer { text-align: center; padding: 3rem 1.5rem; font-size: 0.8rem; color: var(--fog); opacity: 0.5; }
 </style>
 </head>
@@ -115,6 +133,16 @@
 
   <div class="about">
     このブログ「<strong>童話考察</strong>」は、<strong>みだん</strong>が運営する、童話・童謡をテーマにした考察ブログです。<strong>育児</strong>・<strong>子育て</strong>中の方にも、人生観を見つめ直したい方にも読んでいただけるよう、誰も傷つけない考察を心がけています。
+  </div>
+
+  <div class="links">
+    <h3>みだんの他の場所</h3>
+    <div class="link-row">
+      <a href="https://note.com/midamidamidan" target="_blank" rel="noopener">note で連載を読む</a>
+      <a href="https://substack.com/@midan" target="_blank" rel="noopener">Substack</a>
+      <a href="https://x.com/komi_husband" target="_blank" rel="noopener">X (旧Twitter)</a>
+      <a href="https://mypage.syosetu.com/3111564/" target="_blank" rel="noopener">小説家になろう</a>
+    </div>
   </div>
 </main>
 
