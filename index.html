@@ -73,6 +73,46 @@
       "@type": "BlogPosting",
       "headline": "ウサギとカメからみえる「続けることの意味」について",
       "url": "https://midan-tale.github.io/usagi-kame.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "みにくいアヒルの子からみえる「居場所」の見つけ方について",
+      "url": "https://midan-tale.github.io/ugly-duckling.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "花咲かじいさんからみえる「表面だけをまねること」について",
+      "url": "https://midan-tale.github.io/hanasaka-jiisan.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "桃太郎からみえる「送り出す」ときの不安との向き合い方について",
+      "url": "https://midan-tale.github.io/momotaro.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "金の斧銀の斧からみえる「正直さ」について",
+      "url": "https://midan-tale.github.io/kin-no-ono.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "白雪姫からみえる「比べること」の代償について",
+      "url": "https://midan-tale.github.io/shirayukihime.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "人魚姫からみえる「見返りを求めない想い」について",
+      "url": "https://midan-tale.github.io/ningyohime.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "舌切り雀からみえる「足るを知る」ということについて",
+      "url": "https://midan-tale.github.io/shitakiri-suzume.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "浦島太郎からみえる「時間の流れ」との向き合い方について",
+      "url": "https://midan-tale.github.io/urashima-taro.html"
     }
   ]
 }
@@ -91,7 +131,28 @@
   h1.hero { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: clamp(2rem, 6vw, 3.2rem); color: var(--paper); line-height: 1.5; margin-bottom: 1rem; }
   .hero-sub { max-width: 34em; margin: 0 auto; color: var(--fog); font-size: 0.95rem; opacity: 0.85; }
   main { max-width: 880px; margin: 0 auto; padding: 1rem 1.5rem 3rem; }
-  .shelf-label { font-family: 'Shippori Mincho', serif; font-size: 1.1rem; color: var(--candle); border-bottom: 1px solid rgba(232,163,61,0.3); padding-bottom: 0.8rem; margin-bottom: 2rem; }
+  .shelf-label { font-family: 'Shippori Mincho', serif; font-size: 1.1rem; color: var(--candle); border-bottom: 1px solid rgba(232,163,61,0.3); padding-bottom: 0.8rem; margin-bottom: 1.2rem; }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; justify-content: space-between; margin-bottom: 1.8rem; }
+  .filters { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .filter-btn {
+    font-family: 'Zen Maru Gothic', sans-serif; font-size: 0.8rem; color: var(--fog);
+    background: transparent; border: 1px solid rgba(255,255,255,0.15); border-radius: 100px;
+    padding: 0.45rem 1.1rem; cursor: pointer; transition: all 0.15s ease;
+  }
+  .filter-btn:hover { border-color: var(--candle); color: var(--paper); }
+  .filter-btn.active { background: var(--candle); border-color: var(--candle); color: var(--ink); font-weight: 700; }
+  .search-box {
+    font-family: 'Zen Maru Gothic', sans-serif; font-size: 0.85rem; color: var(--paper);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px;
+    padding: 0.5rem 1.1rem; min-width: 180px; flex: 1 1 200px;
+  }
+  .search-box::placeholder { color: var(--fog); opacity: 0.6; }
+  .search-box:focus { outline: none; border-color: var(--candle); }
+  .result-count { font-size: 0.78rem; opacity: 0.55; margin-bottom: 1.2rem; }
+  .no-result { display: none; text-align: center; padding: 3rem 1rem; opacity: 0.6; font-size: 0.9rem; }
+  .card.hidden { display: none; }
+
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
   .card { position: relative; background: var(--paper); color: var(--paper-ink); border-radius: 4px; padding: 1.8rem 1.6rem 1.6rem; box-shadow: 0 8px 20px rgba(0,0,0,0.25); transition: transform 0.2s ease; overflow: hidden; }
   .card:hover { transform: translateY(-4px); }
@@ -126,58 +187,129 @@
 
 <main>
   <div class="shelf-label">最新の童話考察</div>
-  <div class="grid">
 
-    <div class="card">
+  <div class="toolbar">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">すべて</button>
+      <button class="filter-btn" data-filter="ikuji" onclick="setFilter('ikuji', this)">育児層向け</button>
+      <button class="filter-btn" data-filter="jinsei" onclick="setFilter('jinsei', this)">倫理・人生観向け</button>
+    </div>
+    <input type="text" class="search-box" id="searchBox" placeholder="童話名やテーマで検索…" oninput="applyFilters()">
+  </div>
+
+  <div class="result-count" id="resultCount"></div>
+
+  <div class="grid" id="cardGrid">
+
+    <div class="card" data-cat="ikuji">
       <span class="ribbon ikuji"></span>
       <div class="card-tag">育児層向け</div>
       <a href="akazukin.html"><h2>【童話考察】赤ずきんからみえる「知らない道」との付き合い方について</h2></a>
       <p>森の外れで出会った狼は、本当に「悪」だったのか。子育てのヒントになる童話考察。</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="jinsei">
       <span class="ribbon jinsei"></span>
       <div class="card-tag">倫理・人生観向け</div>
       <a href="ari-kirigirisu.html"><h2>【童話考察】アリとキリギリスからみえる「備え」の正体について</h2></a>
       <p>冬を越せなかったのは、本当に怠けていたからか。人生観を問い直す童話考察。</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="ikuji">
       <span class="ribbon ikuji"></span>
       <div class="card-tag">育児層向け</div>
       <a href="kachikachi-yama.html"><h2>【童話考察】かちかち山からみえる「やり返す」ことについて</h2></a>
       <p>おばあさんの仇討ちを、子にどう語りかけるか。育児目線の童話考察。</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="ikuji">
       <span class="ribbon ikuji"></span>
       <div class="card-tag">育児層向け</div>
       <a href="kobuta.html"><h2>【童話考察】三びきの子ぶたからみえる「うまくいかなかったときのやり直し方」について</h2></a>
       <p>失敗した兄たちを、末の弟はどう迎えたか。育児目線の童話考察。</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="jinsei">
       <span class="ribbon jinsei"></span>
       <div class="card-tag">倫理・人生観向け</div>
       <a href="kitakaze-taiyo.html"><h2>【童話考察】北風と太陽からみえる「人を動かす力」について</h2></a>
       <p>力で押すことと、あたためて動かすこと。人生観を問い直す童話考察。</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="jinsei">
       <span class="ribbon jinsei"></span>
       <div class="card-tag">倫理・人生観向け</div>
       <a href="cinderella.html"><h2>【童話考察】シンデレラからみえる「境遇と自分の価値」について</h2></a>
       <p>灰の中でも失わなかったもの。人生観を問い直す童話考察。</p>
     </div>
 
-    <div class="card">
+
+    <div class="card" data-cat="ikuji">
       <span class="ribbon ikuji"></span>
       <div class="card-tag">育児層向け</div>
       <a href="usagi-kame.html"><h2>【童話考察】ウサギとカメからみえる「続けることの意味」について</h2></a>
       <p>速さより、歩みを止めなかったこと。育児目線の童話考察。</p>
     </div>
 
+    <div class="card" data-cat="ikuji">
+      <span class="ribbon ikuji"></span>
+      <div class="card-tag">育児層向け</div>
+      <a href="ugly-duckling.html"><h2>【童話考察】みにくいアヒルの子からみえる「居場所」の見つけ方について</h2></a>
+      <p>合わない場所から、自分に合う場所へ。育児目線の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="ikuji">
+      <span class="ribbon ikuji"></span>
+      <div class="card-tag">育児層向け</div>
+      <a href="hanasaka-jiisan.html"><h2>【童話考察】花咲かじいさんからみえる「表面だけをまねること」について</h2></a>
+      <p>同じ動作でも、結果が分かれた理由。育児目線の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="ikuji">
+      <span class="ribbon ikuji"></span>
+      <div class="card-tag">育児層向け</div>
+      <a href="momotaro.html"><h2>【童話考察】桃太郎からみえる「送り出す」ときの不安との向き合い方について</h2></a>
+      <p>きびだんごに込められた想い。育児目線の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="ikuji">
+      <span class="ribbon ikuji"></span>
+      <div class="card-tag">育児層向け</div>
+      <a href="kin-no-ono.html"><h2>【童話考察】金の斧銀の斧からみえる「正直さ」について</h2></a>
+      <p>見返りより先にあった、素直な気持ち。育児目線の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="jinsei">
+      <span class="ribbon jinsei"></span>
+      <div class="card-tag">倫理・人生観向け</div>
+      <a href="shirayukihime.html"><h2>【童話考察】白雪姫からみえる「比べること」の代償について</h2></a>
+      <p>鏡に問い続けた王妃の心。人生観を問い直す童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="jinsei">
+      <span class="ribbon jinsei"></span>
+      <div class="card-tag">倫理・人生観向け</div>
+      <a href="ningyohime.html"><h2>【童話考察】人魚姫からみえる「見返りを求めない想い」について</h2></a>
+      <p>声を失ってまで貫いた想い。人生観を問い直す童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="jinsei">
+      <span class="ribbon jinsei"></span>
+      <div class="card-tag">倫理・人生観向け</div>
+      <a href="shitakiri-suzume.html"><h2>【童話考察】舌切り雀からみえる「足るを知る」ということについて</h2></a>
+      <p>軽いつづらを選んだ意味。人生観を問い直す童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="jinsei">
+      <span class="ribbon jinsei"></span>
+      <div class="card-tag">倫理・人生観向け</div>
+      <a href="urashima-taro.html"><h2>【童話考察】浦島太郎からみえる「時間の流れ」との向き合い方について</h2></a>
+      <p>竜宮城の時間と、地上の時間。人生観を問い直す童話考察。</p>
+    </div>
+
   </div>
+
+  <div class="no-result" id="noResult">あてはまる童話考察が見つかりませんでした。別のキーワードで探してみてください。</div>
 
   <div class="about">
     このブログ「<strong>童話考察</strong>」は、<strong>みだん</strong>が運営する、童話・童謡をテーマにした考察ブログです。<strong>育児</strong>・<strong>子育て</strong>中の方にも、人生観を見つめ直したい方にも読んでいただけるよう、誰も傷つけない考察を心がけています。
@@ -195,6 +327,37 @@
 </main>
 
 <footer>midan-tale — 童話・童謡をめぐる、小さな灯り</footer>
+
+<script>
+  let currentFilter = 'all';
+
+  function setFilter(filter, btn) {
+    currentFilter = filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const query = document.getElementById('searchBox').value.trim().toLowerCase();
+    const cards = document.querySelectorAll('#cardGrid .card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const matchesCategory = currentFilter === 'all' || card.dataset.cat === currentFilter;
+      const text = card.textContent.toLowerCase();
+      const matchesQuery = query === '' || text.includes(query);
+      const show = matchesCategory && matchesQuery;
+      card.classList.toggle('hidden', !show);
+      if (show) visibleCount++;
+    });
+
+    document.getElementById('resultCount').textContent = `${visibleCount}件の考察を表示中`;
+    document.getElementById('noResult').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  document.addEventListener('DOMContentLoaded', applyFilters);
+</script>
 
 </body>
 </html>
