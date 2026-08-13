@@ -113,6 +113,16 @@
       "@type": "BlogPosting",
       "headline": "浦島太郎からみえる「時間の流れ」との向き合い方について",
       "url": "https://midan-tale.github.io/urashima-taro.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "オオカミ少年からみえる「警報の信頼」について",
+      "url": "https://midan-tale.github.io/ookami-shounen.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "さるかに合戦からみえる「適材適所」の組織力について",
+      "url": "https://midan-tale.github.io/saru-kani.html"
     }
   ]
 }
@@ -121,7 +131,7 @@
 <style>
   :root {
     --ink: #1B2430; --ink-deep: #131A24; --candle: #E8A33D;
-    --moss: #7A9B7E; --paper: #F6F0E2; --paper-ink: #2A2118; --fog: #C9CEDA;
+    --moss: #7A9B7E; --risk: #C06A4E; --org: #6E8CA0; --paper: #F6F0E2; --paper-ink: #2A2118; --fog: #C9CEDA;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--ink); color: var(--fog); font-family: 'Zen Maru Gothic', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
@@ -159,6 +169,8 @@
   .ribbon { position: absolute; top: 0; right: 1.4rem; width: 22px; height: 48px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%); }
   .ribbon.ikuji { background: var(--moss); }
   .ribbon.jinsei { background: var(--candle); }
+  .ribbon.risk { background: var(--risk); }
+  .ribbon.org { background: var(--org); }
   .card-tag { font-size: 0.72rem; letter-spacing: 0.05em; opacity: 0.6; margin-bottom: 0.6rem; }
   .card h2 { font-family: 'Shippori Mincho', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.6; margin-bottom: 0.8rem; padding-right: 1.5rem; }
   .card p { font-size: 0.85rem; opacity: 0.75; }
@@ -193,6 +205,8 @@
       <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">すべて</button>
       <button class="filter-btn" data-filter="ikuji" onclick="setFilter('ikuji', this)">育児層向け</button>
       <button class="filter-btn" data-filter="jinsei" onclick="setFilter('jinsei', this)">倫理・人生観向け</button>
+      <button class="filter-btn" data-filter="risk" onclick="setFilter('risk', this)">リスクマネジメント向け</button>
+      <button class="filter-btn" data-filter="org" onclick="setFilter('org', this)">組織論・チームビルディング向け</button>
     </div>
     <input type="text" class="search-box" id="searchBox" placeholder="童話名やテーマで検索…" oninput="applyFilters()">
   </div>
@@ -305,6 +319,20 @@
       <div class="card-tag">倫理・人生観向け</div>
       <a href="urashima-taro.html"><h2>【童話考察】浦島太郎からみえる「時間の流れ」との向き合い方について</h2></a>
       <p>竜宮城の時間と、地上の時間。人生観を問い直す童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="risk">
+      <span class="ribbon risk"></span>
+      <div class="card-tag">リスクマネジメント向け</div>
+      <a href="ookami-shounen.html"><h2>【童話考察】オオカミ少年からみえる「警報の信頼」について</h2></a>
+      <p>嘘の警報が本物を届かなくする。リスク管理の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="org">
+      <span class="ribbon org"></span>
+      <div class="card-tag">組織論・チームビルディング向け</div>
+      <a href="saru-kani.html"><h2>【童話考察】さるかに合戦からみえる「適材適所」の組織力について</h2></a>
+      <p>強さより組み合わせ。組織論・チームビルディングの童話考察。</p>
     </div>
 
   </div>
