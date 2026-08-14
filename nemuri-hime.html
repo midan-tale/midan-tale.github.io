@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【童話考察】眠れる森の美女｜「招かれなかった一人」｜リスク</title>
+<meta name="description" content="童話「眠れる森の美女」をリスクマネジメントの視点から考察。招待漏れが呪いを招いた展開から、見落とし一つが招くリスクを童話考察ブログ みだんが読み解きます。">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://midan-tale.github.io/nemuri-hime.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="童話考察ブログ みだんの灯り">
+<meta property="og:title" content="【童話考察】眠れる森の美女からみえる「招かれなかった一人」のリスクについて">
+<meta property="og:description" content="童話「眠れる森の美女」をリスクマネジメントの視点から考察。招待漏れが呪いを招いた展開から、見落とし一つが招くリスクを童話考察ブログ みだんが読み解きます。">
+<meta property="og:url" content="https://midan-tale.github.io/nemuri-hime.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1B2430; --candle: #E8A33D; --moss: #7A9B7E; --risk: #C06A4E; --org: #6E8CA0; --paper: #F6F0E2; --paper-ink: #2A2118; --fog: #C9CEDA; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--ink); color: var(--fog); font-family: 'Zen Maru Gothic', sans-serif; line-height: 1.9; -webkit-font-smoothing: antialiased; }
+  nav { padding: 1.5rem 1.5rem 0; max-width: 680px; margin: 0 auto; }
+  nav a { color: var(--candle); text-decoration: none; font-size: 0.85rem; }
+  article { max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem 2rem; }
+  .tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.05em; background: var(--risk); color: var(--ink); padding: 0.25rem 0.8rem; border-radius: 100px; margin-bottom: 1.2rem; font-weight: 700; }
+  .lede { font-size: 1.02rem; font-weight: 700; color: var(--paper); background: rgba(0,0,0,0.001); border-left: 3px solid var(--risk); padding: 0.9rem 1.1rem; margin-bottom: 1.6rem; border-radius: 0 4px 4px 0; background: color-mix(in srgb, var(--risk) 12%, transparent); }
+  h1 { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: clamp(1.5rem, 5vw, 2.1rem); color: var(--paper); line-height: 1.6; margin-bottom: 1.2rem; }
+  .body-text p { margin-bottom: 1.3rem; font-size: 0.98rem; }
+  .body-text h2 { font-family: 'Shippori Mincho', serif; color: var(--risk); font-size: 1.1rem; margin: 2rem 0 0.9rem; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.6rem; font-size: 0.85rem; }
+  .compare-table th, .compare-table td { border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 0.5rem; text-align: left; }
+  .compare-table th { background: color-mix(in srgb, var(--risk) 18%, transparent); color: var(--paper); font-weight: 700; }
+  .action-list { margin: 1rem 0 1.6rem; padding-left: 1.2rem; }
+  .action-list li { margin-bottom: 0.7rem; font-size: 0.95rem; }
+  .book-rec { max-width: 680px; margin: 0 auto; padding: 0 1.5rem 1rem; }
+  .book-rec .box { background: color-mix(in srgb, var(--risk) 8%, transparent); border: 1px solid color-mix(in srgb, var(--risk) 25%, transparent); border-radius: 6px; padding: 1.4rem 1.5rem; }
+  .book-rec .label { font-size: 0.72rem; letter-spacing: 0.05em; color: var(--risk); margin-bottom: 0.6rem; }
+  .book-rec .book-title { font-family: 'Shippori Mincho', serif; font-size: 1.05rem; color: var(--paper); margin-bottom: 0.2rem; }
+  .book-rec .book-author { font-size: 0.8rem; opacity: 0.65; margin-bottom: 0.7rem; }
+  .book-rec .book-desc { font-size: 0.88rem; opacity: 0.85; margin-bottom: 1rem; }
+  .book-rec .book-links a { display: inline-block; font-size: 0.8rem; color: var(--ink); background: var(--risk); padding: 0.45rem 1rem; border-radius: 100px; text-decoration: none; margin-right: 0.6rem; margin-bottom: 0.4rem; font-weight: 700; }
+  .book-rec .disclosure { font-size: 0.68rem; opacity: 0.45; margin-top: 0.8rem; }
+  .related { max-width: 680px; margin: 1rem auto 0; padding: 1.8rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+  .related h3 { font-family: 'Shippori Mincho', serif; color: var(--candle); font-size: 1rem; margin-bottom: 1rem; }
+  .related ul { list-style: none; }
+  .related li { margin-bottom: 0.7rem; }
+  .related a { color: var(--fog); font-size: 0.9rem; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.3); }
+  footer { text-align: center; padding: 2rem 1.5rem 3rem; font-size: 0.8rem; color: var(--fog); opacity: 0.5; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "眠れる森の美女からみえる「招かれなかった一人」のリスクについて",
+  "description": "童話「眠れる森の美女」をリスクマネジメントの視点から考察。招待漏れが呪いを招いた展開から、見落とし一つが招くリスクを童話考察ブログ みだんが読み解きます。",
+  "url": "https://midan-tale.github.io/nemuri-hime.html",
+  "inLanguage": "ja",
+  "keywords": ["童話考察", "童話", "考察", "リスクマネジメント", "眠れる森の美女"],
+  "articleSection": "リスクマネジメント向け",
+  "author": {
+    "@type": "Person",
+    "name": "みだん",
+    "sameAs": [
+      "https://note.com/midamidamidan",
+      "https://substack.com/@midan",
+      "https://x.com/komi_husband",
+      "https://mypage.syosetu.com/3111564/"
+    ]
+  },
+  "publisher": { "@type": "Organization", "name": "童話考察ブログ みだんの灯り" },
+  "mainEntityOfPage": "https://midan-tale.github.io/nemuri-hime.html"
+}
+</script>
+</head>
+<body>
+
+<nav><a href="index.html">← 童話考察ブログ みだんの灯りへ戻る</a></nav>
+
+<article>
+  <span class="tag">リスクマネジメント向け</span>
+  <h1>【童話考察】眠れる森の美女からみえる「招かれなかった一人」のリスクについて</h1>
+
+  <div class="lede">一人の招待を忘れたことが、国全体を長い眠りに落とすことになった。</div>
+
+  <div class="body-text">
+<p>王女の誕生を祝う宴に、国中の妖精たちが招かれる。ところが13人いる妖精のうち、1人だけ招待から漏れてしまう。怒った妖精は宴に乗り込み、王女に「16歳で糸車の針に刺されて死ぬ」という呪いをかける。別の妖精の力でその呪いは「深い眠りにつく」ことに和らげられるが、結局王女は長い眠りに落ちてしまう。</p>
+<table class="compare-table"><tr><th></th><th>招待した場合</th><th>招待しなかった場合</th></tr><tr><td>直接のコスト</td><td>席・食事・贈り物が一人分増える</td><td>ゼロ</td></tr><tr><td>潜在的な代償</td><td>特になし</td><td>国全体が長期停止するほどの呪い</td></tr></table>
+<h2>見落とし一つが、大きなリスクになる</h2>
+<p>招待漏れは、悪意によるものではなく、単純な見落としだったとされることが多い。だが結果として、その小さな見落としが、国全体を揺るがす事態を招いた。リスク管理の世界でも、意図的な排除より、うっかりした見落としの方が、後々大きな代償を生むことがある。</p>
+<h2>全員を招くコストと、招かないリスク</h2>
+<p>13人目を招くコストは、席をもう一つ用意する程度のものだったはずだ。一方、招かなかった代償は計り知れなかった。関係者・利害関係者の洗い出しにおいては、「念のため入れておく」コストの方が、「漏らしてしまう」リスクよりずっと小さいことが多い。</p>
+  </div>
+</article>
+
+<div class="book-rec">
+  <div class="box">
+    <div class="label">この考察と、あわせて読みたいアイテム</div>
+    <div class="book-title">防犯カメラ(屋内・屋外用)</div>
+    <div class="book-author">各社</div>
+    <div class="book-desc">不審な動きを検知し通知。見えないリスクを可視化する道具。</div>
+    <div class="book-links">
+        <a href="https://www.amazon.co.jp/Eufy-%E3%83%A6%E3%83%BC%E3%83%95%E3%82%A3-T8110-SoloCam-C35/dp/B0FDK3K482?linkCode=ll2&tag=midan-22&linkId=943a505e41455f77ebae533a028fd60d&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">Amazonで見る</a>
+    </div>
+    <div class="disclosure">※本ページはプロモーションを含みます(Amazonアソシエイト・楽天アフィリエイト)</div>
+  </div>
+</div>
+
+<div class="related">
+  <h3>あわせて読みたい童話考察</h3>
+  <ul>
+    <li><a href="ari-kirigirisu.html">【童話考察】アリとキリギリスからみえる「備え」の正体について</a></li>
+    <li><a href="shirayukihime.html">【童話考察】白雪姫からみえる「比べること」の代償について</a></li>
+  </ul>
+</div>
+
+<footer>童話考察ブログ みだんの灯り — 童話・童謡をめぐる、小さな灯り</footer>
+
+</body>
+</html>
