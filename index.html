@@ -188,6 +188,31 @@
       "@type": "BlogPosting",
       "headline": "分福茶釜からみえる「異なる形の貢献」について",
       "url": "https://midan-tale.github.io/bunbuku-chagama.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "美女と野獣からみえる「見た目の先にあるもの」について",
+      "url": "https://midan-tale.github.io/bijo-to-yaju.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "かえるの王様からみえる「約束を守ること」について",
+      "url": "https://midan-tale.github.io/kaeru-no-osama.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "天女の羽衣からみえる「相手の自由を尊重すること」について",
+      "url": "https://midan-tale.github.io/tennyo-no-hagoromo.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "雪女からみえる「秘密と誠実さ」について",
+      "url": "https://midan-tale.github.io/yuki-onna.html"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "織姫と彦星からみえる「愛とバランス」について",
+      "url": "https://midan-tale.github.io/orihime-hikoboshi.html"
     }
   ]
 }
@@ -196,7 +221,7 @@
 <style>
   :root {
     --ink: #1B2430; --ink-deep: #131A24; --candle: #E8A33D;
-    --moss: #7A9B7E; --risk: #C06A4E; --org: #6E8CA0; --paper: #F6F0E2; --paper-ink: #2A2118; --fog: #C9CEDA;
+    --moss: #7A9B7E; --risk: #C06A4E; --org: #6E8CA0; --love: #B87A9E; --paper: #F6F0E2; --paper-ink: #2A2118; --fog: #C9CEDA;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--ink); color: var(--fog); font-family: 'Zen Maru Gothic', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
@@ -236,6 +261,7 @@
   .ribbon.jinsei { background: var(--candle); }
   .ribbon.risk { background: var(--risk); }
   .ribbon.org { background: var(--org); }
+  .ribbon.love { background: var(--love); }
   .card-tag { font-size: 0.72rem; letter-spacing: 0.05em; opacity: 0.6; margin-bottom: 0.6rem; }
   .card h2 { font-family: 'Shippori Mincho', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.6; margin-bottom: 0.8rem; padding-right: 1.5rem; }
   .card p { font-size: 0.85rem; opacity: 0.75; }
@@ -259,7 +285,7 @@
 <header>
   <div class="site-name">MIDAN-TALE</div>
   <h1 class="hero">むかしむかしの、<br>そのさきに。</h1>
-  <p class="hero-sub">誰もが知っている童話・童謡を、灯りをひとつともして読みなおす童話考察ブログです。ときに育児・子育てのヒントに、ときに倫理観や人生観を見つめ直すきっかけに。誰も傷つけない、やさしい考察をお届けします。</p>
+  <p class="hero-sub">誰もが知っている童話・童謡を、灯りをひとつともして読みなおす童話考察ブログです。育児・子育てのヒントに、倫理観や人生観を見つめ直すきっかけに、ときにはリスクマネジメントや組織論、恋愛観のヒントにも。誰も傷つけない、やさしい考察をお届けします。</p>
 </header>
 
 <main>
@@ -272,6 +298,7 @@
       <button class="filter-btn" data-filter="jinsei" onclick="setFilter('jinsei', this)">倫理・人生観向け</button>
       <button class="filter-btn" data-filter="risk" onclick="setFilter('risk', this)">リスクマネジメント向け</button>
       <button class="filter-btn" data-filter="org" onclick="setFilter('org', this)">組織論・チームビルディング向け</button>
+      <button class="filter-btn" data-filter="love" onclick="setFilter('love', this)">恋愛観向け</button>
     </div>
     <input type="text" class="search-box" id="searchBox" placeholder="童話名やテーマで検索…" oninput="applyFilters()">
   </div>
@@ -489,6 +516,41 @@
       <div class="card-tag">組織論・チームビルディング向け</div>
       <a href="bunbuku-chagama.html"><h2>【童話考察】分福茶釜からみえる「異なる形の貢献」について</h2></a>
       <p>茶釜が見せた、思いがけない芸。組織論の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="love">
+      <span class="ribbon love"></span>
+      <div class="card-tag">恋愛観向け</div>
+      <a href="bijo-to-yaju.html"><h2>【童話考察】美女と野獣からみえる「見た目の先にあるもの」について</h2></a>
+      <p>最初の印象と、時間をかけて見えてくるもの。恋愛観の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="love">
+      <span class="ribbon love"></span>
+      <div class="card-tag">恋愛観向け</div>
+      <a href="kaeru-no-osama.html"><h2>【童話考察】かえるの王様からみえる「約束を守ること」について</h2></a>
+      <p>気の進まない約束を、どう守るか。恋愛観の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="love">
+      <span class="ribbon love"></span>
+      <div class="card-tag">恋愛観向け</div>
+      <a href="tennyo-no-hagoromo.html"><h2>【童話考察】天女の羽衣からみえる「相手の自由を尊重すること」について</h2></a>
+      <p>去る自由がある関係の確かさ。恋愛観の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="love">
+      <span class="ribbon love"></span>
+      <div class="card-tag">恋愛観向け</div>
+      <a href="yuki-onna.html"><h2>【童話考察】雪女からみえる「秘密と誠実さ」について</h2></a>
+      <p>誰への誠実さかを見誤ると。恋愛観の童話考察。</p>
+    </div>
+
+    <div class="card" data-cat="love">
+      <span class="ribbon love"></span>
+      <div class="card-tag">恋愛観向け</div>
+      <a href="orihime-hikoboshi.html"><h2>【童話考察】織姫と彦星からみえる「愛とバランス」について</h2></a>
+      <p>会えない時間も、関係の一部として。恋愛観の童話考察。</p>
     </div>
 
   </div>
