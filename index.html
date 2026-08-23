@@ -381,6 +381,38 @@
   .search-box:focus { outline: none; border-color: var(--candle); }
   .result-count { font-size: 0.78rem; opacity: 0.55; margin-bottom: 1.2rem; }
   .no-result { display: none; text-align: center; padding: 3rem 1rem; opacity: 0.6; font-size: 0.9rem; }
+
+  .random-btn {
+    font-family: 'Zen Maru Gothic', sans-serif; font-size: 0.85rem; color: var(--ink);
+    background: var(--candle); border: none; border-radius: 100px;
+    padding: 0.55rem 1.3rem; cursor: pointer; font-weight: 700; white-space: nowrap;
+    transition: opacity 0.15s ease;
+  }
+  .random-btn:hover { opacity: 0.85; }
+
+  .kana-index { max-width: 880px; margin: 0 auto 1.8rem; }
+  .kana-index summary {
+    cursor: pointer; font-size: 0.85rem; color: var(--candle);
+    padding: 0.6rem 0; list-style: none; user-select: none;
+  }
+  .kana-index summary::-webkit-details-marker { display: none; }
+  .kana-index summary::before { content: "▸ "; }
+  .kana-index[open] summary::before { content: "▾ "; }
+  .kana-index .kana-body {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px; padding: 1.2rem 1.4rem; margin-top: 0.4rem; font-size: 0.85rem;
+  }
+  .kana-row { margin-bottom: 1rem; }
+  .kana-row:last-child { margin-bottom: 0; }
+  .kana-row .kana-label {
+    display: inline-block; font-family: 'Shippori Mincho', serif; color: var(--candle);
+    font-weight: 700; margin-right: 0.6rem; min-width: 1.4em;
+  }
+  .kana-row a {
+    color: var(--fog); text-decoration: none; margin-right: 0.9rem;
+    display: inline-block; margin-bottom: 0.3rem; border-bottom: 1px dotted rgba(255,255,255,0.25);
+  }
+  .kana-row a:hover { color: var(--paper); border-color: var(--paper); }
   .card.hidden { display: none; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
@@ -421,6 +453,22 @@
 <main>
   <div class="shelf-label">最新の童話考察</div>
 
+  <details class="kana-index">
+    <summary>五十音から童話名で探す</summary>
+    <div class="kana-body">
+    <div class="kana-row"><span class="kana-label">あ</span><a href="akazukin.html">赤ずきん</a><a href="ari-kirigirisu.html">アリとキリギリス</a><a href="usagi-kame.html">ウサギとカメ</a><a href="urashima-taro.html">浦島太郎</a><a href="ookami-shounen.html">オオカミ少年</a><a href="issun-boshi.html">一寸法師</a><a href="inaba-no-shirousagi.html">因幡の白兎</a><a href="orihime-hikoboshi.html">織姫と彦星</a><a href="ookami-to-nanahiki-no-koyagi.html">オオカミと七匹の子ヤギ</a><a href="ari-to-hato.html">アリとハト</a><a href="alibaba-to-40nin-no-touzoku.html">アリババと40人の盗賊</a><a href="ookina-kabu.html">おおきなかぶ</a><a href="ousama-no-mimi-wa-roba-no-mimi.html">王様の耳はロバの耳</a><a href="orpheus-to-eurydice.html">オルフェウスとエウリュディケ</a><a href="endou-mame-no-ohimesama.html">えんどう豆の上のお姫さま</a></div>
+    <div class="kana-row"><span class="kana-label">か</span><a href="kachikachi-yama.html">かちかち山</a><a href="kitakaze-taiyo.html">北風と太陽</a><a href="kin-no-ono.html">金の斧銀の斧</a><a href="kobutori-jiisan.html">こぶとりじいさん</a><a href="kaguyahime.html">かぐや姫</a><a href="kaeru-no-osama.html">かえるの王様</a><a href="kane-no-tamago-no-gachou.html">金の卵を産むガチョウ</a><a href="kitsune-to-budou.html">きつねとぶどう</a><a href="kobito-no-kutsuya.html">こびとのくつや</a><a href="gachou-ban-no-musume.html">がちょう番の娘</a></div>
+    <div class="kana-row"><span class="kana-label">さ</span><a href="kobuta.html">三びきの子ぶた</a><a href="cinderella.html">シンデレラ</a><a href="shirayukihime.html">白雪姫</a><a href="shitakiri-suzume.html">舌切り雀</a><a href="saru-kani.html">さるかに合戦</a><a href="junishi.html">十二支のはじまり</a><a href="jack-to-mamenoki.html">ジャックと豆の木</a><a href="sannen-netaro.html">三年寝太郎</a><a href="sanmai-no-ofuda.html">三枚のお札</a><a href="yagi-no-gara-gara-don.html">三びきのやぎのがらがらどん</a><a href="sannen-touge.html">三年峠</a><a href="juninin-no-odoru-himegimi.html">十二人の踊る姫君</a></div>
+    <div class="kana-row"><span class="kana-label">た</span><a href="tsuru-no-ongaeshi.html">鶴の恩返し</a><a href="tennyo-no-hagoromo.html">天女の羽衣</a><a href="chikara-taro.html">力太郎</a><a href="toshishun.html">杜子春</a></div>
+    <div class="kana-row"><span class="kana-label">な</span><a href="nagagutsu-neko.html">長靴をはいた猫</a><a href="nemuri-hime.html">眠れる森の美女</a><a href="ningyohime.html">人魚姫</a><a href="nezumi-no-yomeiri.html">ねずみの嫁入り</a><a href="naita-akaoni.html">泣いた赤鬼</a></div>
+    <div class="kana-row"><span class="kana-label">は</span><a href="hanasaka-jiisan.html">花咲かじいさん</a><a href="hansel-gretel.html">ヘンゼルとグレーテル</a><a href="bremen.html">ブレーメンの音楽隊</a><a href="bunbuku-chagama.html">分福茶釜</a><a href="bijo-to-yaju.html">美女と野獣</a><a href="hachikazuki-hime.html">鉢かづき姫</a><a href="pandora-no-hako.html">パンドラの箱</a><a href="hadaka-no-osama.html">はだかの王様</a><a href="hakucho-no-mizuumi.html">白鳥の湖</a><a href="pygmalion.html">ピグマリオン</a></div>
+    <div class="kana-row"><span class="kana-label">ま</span><a href="ugly-duckling.html">みにくいアヒルの子</a><a href="momotaro.html">桃太郎</a></div>
+    <div class="kana-row"><span class="kana-label">や</span><a href="yuki-onna.html">雪女</a></div>
+    <div class="kana-row"><span class="kana-label">ら</span><a href="rapunzel.html">ラプンツェル</a></div>
+    <div class="kana-row"><span class="kana-label">わ</span><a href="warashibe-choja.html">わらしべ長者</a></div>
+    </div>
+  </details>
+
   <div class="toolbar">
     <div class="filters">
       <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">すべて</button>
@@ -431,6 +479,7 @@
       <button class="filter-btn" data-filter="love" onclick="setFilter('love', this)">恋愛観向け</button>
     </div>
     <input type="text" class="search-box" id="searchBox" placeholder="童話名やテーマで検索…" oninput="applyFilters()">
+    <button class="random-btn" onclick="goRandom()">🎲 ランダムに1本</button>
   </div>
 
   <div class="result-count" id="resultCount"></div>
@@ -912,6 +961,13 @@
 
     document.getElementById('resultCount').textContent = `${visibleCount}件の考察を表示中`;
     document.getElementById('noResult').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  function goRandom() {
+    const links = Array.from(document.querySelectorAll('#cardGrid .card a')).map(a => a.getAttribute('href'));
+    if (links.length === 0) return;
+    const pick = links[Math.floor(Math.random() * links.length)];
+    window.location.href = pick;
   }
 
   document.addEventListener('DOMContentLoaded', applyFilters);
